@@ -95,9 +95,16 @@
 			border-radius: var( --radius );
 			padding: 18px 24px;
 			display: flex;
+			flex-direction: column;
 			align-items: center;
-			gap: 14px;
-			flex-wrap: wrap;
+			text-align: center;
+			gap: 10px;
+		}
+
+		.controls__picker {
+			display: flex;
+			align-items: center;
+			gap: 8px;
 		}
 
 		.controls__label {
@@ -109,13 +116,11 @@
 		input[type="color"] {
 			-webkit-appearance: none;
 			appearance: none;
-			width: 38px;
+			width: 30px;
 			height: 30px;
-			border: 1px solid var( --border );
 			border-radius: 6px;
 			background: var( --surface-2 );
 			cursor: pointer;
-			padding: 2px;
 		}
 
 		input[type="color"]::-webkit-color-swatch-wrapper {
@@ -130,8 +135,11 @@
 		.controls__hint {
 			font-size: 0.78rem;
 			color: var( --text-dim );
-			flex: 1;
-			min-width: 160px;
+		}
+
+		.controls__pick-label {
+			font-size: 0.78rem;
+			color: var( --text-dim );
 		}
 
 		.btn {
@@ -347,7 +355,10 @@
 
 		<span class="controls__label">Apple-Touch-Hintergrund</span>
 
-		<input type="color" id="bgColor" value="#ffffff" aria-label="Hintergrundfarbe für Apple-Touch-Icons">
+		<div class="controls__picker">
+			<input type="color" id="bgColor" value="#ffffff" aria-label="Hintergrundfarbe für Apple-Touch-Icons">
+			<span class="controls__pick-label">Farbe auswählen</span>
+		</div>
 
 		<span class="controls__hint">Wird nur hinter Apple-Touch-Icons (180, 512) gelegt — übrige Icons bleiben transparent.</span>
 
