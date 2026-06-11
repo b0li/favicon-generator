@@ -115,12 +115,15 @@
 
 		input[type="color"] {
 			-webkit-appearance: none;
+			-moz-appearance: none;
 			appearance: none;
 			width: 30px;
 			height: 30px;
+			border: none;
 			border-radius: 6px;
 			background: var( --surface-2 );
 			cursor: pointer;
+			padding: 0;
 		}
 
 		input[type="color"]::-webkit-color-swatch-wrapper {
@@ -128,6 +131,12 @@
 		}
 
 		input[type="color"]::-webkit-color-swatch {
+			border: none;
+			border-radius: 4px;
+		}
+
+		/* Firefox renders the swatch via its own pseudo-element */
+		input[type="color"]::-moz-color-swatch {
 			border: none;
 			border-radius: 4px;
 		}
